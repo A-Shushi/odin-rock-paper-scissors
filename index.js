@@ -17,7 +17,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     let enteredChoice = prompt("Rock, Paper or Scissors?");
     let lowerCaseChoice = enteredChoice.toLowerCase();
-    return lowerCaseChoice.charAt(0).toUpperCase() + lowerCaseChoice.slice(1)  // Convert string to only have first capital letter
+    return lowerCaseChoice.charAt(0).toUpperCase() + lowerCaseChoice.slice(1);  // Convert string to only have first capital letter
 }
 
 // Declare humanScore computerScore variables that keep score of the game
@@ -31,40 +31,46 @@ function playRound() {
     let computerChoice = getComputerChoice();
     let humanChoice = getHumanChoice();
     if (computerChoice === "Rock" && humanChoice === "Rock") {
-        console.log("It's a draw!")
+        console.log("It's a draw! Rock vs Rock");
     } else if (computerChoice === "Rock" && humanChoice === "Paper") {
         humanScore += 1;
-        console.log("You win! Paper beats Rock!")
+        console.log("You win! Paper beats Rock!");
     } else if (computerChoice === "Rock" && humanChoice === "Scissors") {
         computerScore += 1;
-        console.log("You lose! Rock beats Scissors!")
+        console.log("You lose! Rock beats Scissors!");
     } else if (computerChoice === "Paper" && humanChoice === "Rock") {
         computerScore += 1;
-        console.log("You lose! Paper beats Rock!")
+        console.log("You lose! Paper beats Rock!");
     } else if (computerChoice === "Paper" && humanChoice === "Paper") {
-        console.log("It's a draw!")
+        console.log("It's a draw! Paper vs Paper");
     } else if (computerChoice === "Paper" && humanChoice === "Scissors") {
         humanScore += 1;
-        console.log("You win! Scissors beat Paper!")
+        console.log("You win! Scissors beat Paper!");
     } else if (computerChoice === "Scissors" && humanChoice === "Rock") {
         humanScore += 1;
-        console.log("You win! Rock beats Scissors!")
+        console.log("You win! Rock beats Scissors!");
     } else if (computerChoice === "Scissors" && humanChoice === "Paper") {
         computerScore += 1;
-        console.log("You lose! Scissors beat Paper!")
+        console.log("You lose! Scissors beat Paper!");
     } else if (computerChoice === "Scissors" && humanChoice === "Scissors") {
-        console.log("It's a draw!")
+        console.log("It's a draw! Scissors vs Scissors");
     }
 }
 
-playRound()
+// Write the logic to play the game for 5 rounds
 
-// TODO Step 4: Write logic to play a single round of the game
-//  TODO: Define a function playRound
-//  TODO: Call functions getComputerChoice and getHumanChoice to get results
-//  TODO: Create a case of IF and IF ELSE statements that cover all possible choices
-//      TODO: eg. Rock beats scissors, but loses to paper and draws to another rock
+function playGame() {
+    for (let i = 1; i <= 5; i++) {
+        playRound();
+        console.log(`Your Score: ${humanScore}\nComputer Score: ${computerScore}`)
+    }
+    if (humanScore > computerScore) {
+        console.log("Congratulation, you WIN! To play again, hit the refresh button!")
+    } else if (humanScore < computerScore) {
+        console.log("Better luck next time, you LOST! To play again, hit the refresh button!")
+    } else {
+        console.log("It's a DRAW! To play again, hit the refresh button!")
+    }
+}
 
-// TODO Step 5: Write the logic to pay the game for 5 rounds
-//  TODO: Declare a playGame variable, which calls the playRound function and repeat the process 5 times
-//  TODO: Output the score after each round and the overall winner after 5 games
+playGame()
