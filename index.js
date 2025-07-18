@@ -12,13 +12,15 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice())
+// Define getHumanChoice function where a human enters their choice and program returns it
 
-// TODO Step 2: Define getHumanChoice function where a human enters their choice and program records it
-//  TODO: Use prompt to get user input
-//  TODO: Convert text into uniform format with capital first letter
-//  TODO: If string does not equal "Rock" or "Paper" or "Scissors" throw an error and restart the function
-//  TODO: IF 0 THEN rock ELSE IF paper ELSE scissors
+function getHumanChoice() {
+    let enteredChoice = prompt("Rock, Paper or Scissors?");
+    let lowerCaseChoice = enteredChoice.toLowerCase();
+    return lowerCaseChoice.charAt(0).toUpperCase() + lowerCaseChoice.slice(1)  // Convert string to only have first capital letter
+}
+
+console.log(getHumanChoice())
 
 // TODO Step 3: Declare humanScore computerScore variables that keep score of the game
 
