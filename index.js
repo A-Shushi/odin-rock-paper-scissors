@@ -1,7 +1,18 @@
-// TODO Step 1: Define getComputerChoice function where a computer randomly chooses either rock, paper or scissors
-//  TODO: Use Math.random to get a random number 0 to 1
-//  TODO: Use Math.floor to limit the possible outcomes to either 0,1,2
-//  TODO: IF 0 THEN "Rock" ELSE IF "Paper" ELSE "Scissors"
+// Define getComputerChoice function where a computer randomly chooses either rock, paper or scissors
+
+function getComputerChoice() {
+    let randomNumber = Math.floor(Math.random() * 3);
+    let computerChoice;
+    if (randomNumber === 0) {
+        return "Rock";
+    } else if (randomNumber === 1) {
+        return "Paper";
+    } else {
+        return "Scissors"
+    }
+}
+
+console.log(getComputerChoice())
 
 // TODO Step 2: Define getHumanChoice function where a human enters their choice and program records it
 //  TODO: Use prompt to get user input
