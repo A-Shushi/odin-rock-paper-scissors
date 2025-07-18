@@ -8,7 +8,7 @@ function getComputerChoice() {
     } else if (randomNumber === 1) {
         return "Paper";
     } else {
-        return "Scissors"
+        return "Scissors";
     }
 }
 
@@ -20,9 +20,10 @@ function getHumanChoice() {
     return lowerCaseChoice.charAt(0).toUpperCase() + lowerCaseChoice.slice(1)  // Convert string to only have first capital letter
 }
 
-console.log(getHumanChoice())
+// Declare humanScore computerScore variables that keep score of the game
 
-// TODO Step 3: Declare humanScore computerScore variables that keep score of the game
+let humanScore = 0;
+let computerScore = 0;
 
 // TODO Step 4: Write logic to play a single round of the game
 //  TODO: Define a function playRound
