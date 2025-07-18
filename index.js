@@ -25,6 +25,40 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+// Logic to play a single round of the game
+
+function playRound() {
+    let computerChoice = getComputerChoice();
+    let humanChoice = getHumanChoice();
+    if (computerChoice === "Rock" && humanChoice === "Rock") {
+        console.log("It's a draw!")
+    } else if (computerChoice === "Rock" && humanChoice === "Paper") {
+        humanScore += 1;
+        console.log("You win! Paper beats Rock!")
+    } else if (computerChoice === "Rock" && humanChoice === "Scissors") {
+        computerScore += 1;
+        console.log("You lose! Rock beats Scissors!")
+    } else if (computerChoice === "Paper" && humanChoice === "Rock") {
+        computerScore += 1;
+        console.log("You lose! Paper beats Rock!")
+    } else if (computerChoice === "Paper" && humanChoice === "Paper") {
+        console.log("It's a draw!")
+    } else if (computerChoice === "Paper" && humanChoice === "Scissors") {
+        humanScore += 1;
+        console.log("You win! Scissors beat Paper!")
+    } else if (computerChoice === "Scissors" && humanChoice === "Rock") {
+        humanScore += 1;
+        console.log("You win! Rock beats Scissors!")
+    } else if (computerChoice === "Scissors" && humanChoice === "Paper") {
+        computerScore += 1;
+        console.log("You lose! Scissors beat Paper!")
+    } else if (computerChoice === "Scissors" && humanChoice === "Scissors") {
+        console.log("It's a draw!")
+    }
+}
+
+playRound()
+
 // TODO Step 4: Write logic to play a single round of the game
 //  TODO: Define a function playRound
 //  TODO: Call functions getComputerChoice and getHumanChoice to get results
