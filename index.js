@@ -14,11 +14,11 @@ function getComputerChoice() {
 
 // Define getHumanChoice function where a human enters their choice and program returns it
 
-function getHumanChoice() {
-    let enteredChoice = prompt("Rock, Paper or Scissors?");
-    let lowerCaseChoice = enteredChoice.toLowerCase();
-    return lowerCaseChoice.charAt(0).toUpperCase() + lowerCaseChoice.slice(1);  // Convert string to only have first capital letter
-}
+// function getHumanChoice() {
+//     let enteredChoice = prompt("Rock, Paper or Scissors?");
+//     let lowerCaseChoice = enteredChoice.toLowerCase();
+//     return lowerCaseChoice.charAt(0).toUpperCase() + lowerCaseChoice.slice(1);  // Convert string to only have first capital letter
+// }
 
 // Declare humanScore computerScore variables that keep score of the game
 
@@ -27,9 +27,9 @@ let computerScore = 0;
 
 // Logic to play a single round of the game
 
-function playRound() {
+function playRound(clickedChoice) {
     let computerChoice = getComputerChoice();
-    let humanChoice = getHumanChoice();
+    let humanChoice = clickedChoice;
     if (computerChoice === "Rock" && humanChoice === "Rock") {
         console.log("It's a draw! Rock vs Rock");
     } else if (computerChoice === "Rock" && humanChoice === "Paper") {
@@ -57,20 +57,28 @@ function playRound() {
     }
 }
 
+const gameboard = document.querySelector(".gameboard")
+
+gameboard.addEventListener("click", (event) => {
+    let humanChoice = event.target.id
+    playRound(humanChoice)
+})
+
+
 // Write the logic to play the game for 5 rounds
 
-function playGame() {
-    for (let i = 1; i <= 5; i++) {
-        playRound();
-        console.log(`Your Score: ${humanScore}\nComputer Score: ${computerScore}`)
-    }
-    if (humanScore > computerScore) {
-        console.log("Congratulation, you WIN! To play again, hit the refresh button!")
-    } else if (humanScore < computerScore) {
-        console.log("Better luck next time, you LOST! To play again, hit the refresh button!")
-    } else {
-        console.log("It's a DRAW! To play again, hit the refresh button!")
-    }
-}
+// function playGame() {
+//     for (let i = 1; i <= 5; i++) {
+//         playRound();
+//         console.log(`Your Score: ${humanScore}\nComputer Score: ${computerScore}`)
+//     }
+//     if (humanScore > computerScore) {
+//         console.log("Congratulation, you WIN! To play again, hit the refresh button!")
+//     } else if (humanScore < computerScore) {
+//         console.log("Better luck next time, you LOST! To play again, hit the refresh button!")
+//     } else {
+//         console.log("It's a DRAW! To play again, hit the refresh button!")
+//     }
+// }
 
-playGame()
+// playGame()
