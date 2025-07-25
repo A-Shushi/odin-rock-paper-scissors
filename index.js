@@ -35,28 +35,37 @@ function playRound(clickedChoice) {
     let humanChoice = clickedChoice;
     if (computerChoice === "Rock" && humanChoice === "Rock") {
         matchResult.textContent = "It's a draw! Rock vs Rock";
+        scoreBoard.textContent = `Your score: ${humanScore} | Computer Score: ${computerScore}`
     } else if (computerChoice === "Rock" && humanChoice === "Paper") {
         humanScore += 1;
         matchResult.textContent = "You win! Paper beats Rock!";
+        scoreBoard.textContent = `Your score: ${humanScore} | Computer Score: ${computerScore}`
     } else if (computerChoice === "Rock" && humanChoice === "Scissors") {
         computerScore += 1;
         matchResult.textContent = "You lose! Rock beats Scissors!";
+        scoreBoard.textContent = `Your score: ${humanScore} | Computer Score: ${computerScore}`
     } else if (computerChoice === "Paper" && humanChoice === "Rock") {
         computerScore += 1;
         matchResult.textContent = "You lose! Paper beats Rock!";
+        scoreBoard.textContent = `Your score: ${humanScore} | Computer Score: ${computerScore}`
     } else if (computerChoice === "Paper" && humanChoice === "Paper") {
         matchResult.textContent = "It's a draw! Paper vs Paper";
+        scoreBoard.textContent = `Your score: ${humanScore} | Computer Score: ${computerScore}`
     } else if (computerChoice === "Paper" && humanChoice === "Scissors") {
         humanScore += 1;
         matchResult.textContent = "You win! Scissors beat Paper!";
+        scoreBoard.textContent = `Your score: ${humanScore} | Computer Score: ${computerScore}`
     } else if (computerChoice === "Scissors" && humanChoice === "Rock") {
         humanScore += 1;
         matchResult.textContent = "You win! Rock beats Scissors!";
+        scoreBoard.textContent = `Your score: ${humanScore} | Computer Score: ${computerScore}`
     } else if (computerChoice === "Scissors" && humanChoice === "Paper") {
         computerScore += 1;
         matchResult.textContent = "You lose! Scissors beat Paper!";
+        scoreBoard.textContent = `Your score: ${humanScore} | Computer Score: ${computerScore}`
     } else if (computerChoice === "Scissors" && humanChoice === "Scissors") {
         matchResult.textContent = "It's a draw! Scissors vs Scissors";
+        scoreBoard.textContent = `Your score: ${humanScore} | Computer Score: ${computerScore}`
     }
 }
 
